@@ -31,6 +31,14 @@ describe('ProjectCard', () => {
     expect(el.querySelectorAll('.tags li').length).toBe(2);
   });
 
+  it('usa h2 si se le pide', async () => {
+    fixture = TestBed.createComponent(ProjectCard);
+    fixture.componentRef.setInput('project', PROJECT);
+    fixture.componentRef.setInput('headingLevel', 2);
+    await fixture.whenStable();
+    expect((fixture.nativeElement as HTMLElement).querySelector('h2')?.textContent).toBe('Demo');
+  });
+
   it('enlaza el repo solo si es público', async () => {
     expect((await render(PROJECT)).querySelector('a')?.href).toBe(PROJECT.repoUrl);
     expect((await render({ ...PROJECT, repoUrl: null })).querySelector('a')).toBeNull();

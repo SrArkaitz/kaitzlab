@@ -1,5 +1,9 @@
 <article class="card">
-  <h3>{{ project().name }}</h3>
+  @if (headingLevel() === 2) {
+    <h2>{{ project().name }}</h2>
+  } @else {
+    <h3>{{ project().name }}</h3>
+  }
   <p>{{ project().summary }}</p>
   <ul class="tags" aria-label="Tecnologías">
     @for (tech of project().technologies; track tech) {

@@ -9,4 +9,6 @@ import { Project } from '../../core/data/models';
 })
 export class ProjectCard {
   readonly project = input.required<Project>();
+  /** Nivel del título según dónde esté la tarjeta, para no saltarse niveles (h1 → h2 → h3). */
+  readonly headingLevel = input<2 | 3>(3);
 }

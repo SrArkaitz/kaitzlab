@@ -46,6 +46,7 @@ diseño propio, Lighthouse ≥ 90 en las cuatro categorías y el enlace puesto e
 - [x] Prerender de todas las rutas y comprobar que cada HTML trae su contenido
 - [x] Tests de los componentes principales (Vitest) y de que cada ruta carga
 - [ ] Lighthouse ≥ 90 en las cuatro categorías (móvil) y revisión de accesibilidad con teclado
+  (2026-11-03, con el diseño neutro: 100 en las cuatro en las 6 páginas; repetir con la identidad visual)
 - [ ] Opcional: Lighthouse CI en el workflow para que no empeore
 
 ## Cierre de fase
