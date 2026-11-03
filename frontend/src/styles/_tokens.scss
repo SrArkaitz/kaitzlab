@@ -39,16 +39,26 @@
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #121212;
-    --color-surface: #1c1c1c;
-    --color-text: #ececec;
-    --color-text-muted: #a8a8a8;
-    --color-border: #2e2e2e;
-    --color-accent: #7aa7ff;
-    --color-accent-contrast: #121212;
+@mixin dark {
+  --color-bg: #121212;
+  --color-surface: #1c1c1c;
+  --color-text: #ececec;
+  --color-text-muted: #a8a8a8;
+  --color-border: #2e2e2e;
+  --color-accent: #7aa7ff;
+  --color-accent-contrast: #121212;
 
-    color-scheme: dark;
+  color-scheme: dark;
+}
+
+/* data-theme lo pone ThemeService (o el script de index.html antes de pintar) */
+:root[data-theme='dark'] {
+  @include dark;
+}
+
+/* Sin JavaScript no hay data-theme: se sigue al sistema */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @include dark;
   }
 }

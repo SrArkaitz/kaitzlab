@@ -22,7 +22,7 @@ diseño propio, Lighthouse ≥ 90 en las cuatro categorías y el enlace puesto e
 ### Identidad visual
 - [ ] Proponer 2–3 direcciones visuales (paleta, tipografía, tono) a partir de las webs de referencia y elegir una
 - [ ] Ampliar `_tokens.scss` con la paleta elegida (claro y oscuro con contraste AA) y la tipografía (fuentes autoalojadas en `public/`, `font-display: swap`)
-- [ ] `ThemeService` como en gestion-hogar: sistema/claro/oscuro, `data-theme` en `<html>` y script en `index.html` para no parpadear al cargar
+- [x] `ThemeService` como en gestion-hogar: sistema/claro/oscuro, `data-theme` en `<html>` y script en `index.html` para no parpadear al cargar
 - [ ] Favicon e icono propios (SVG + PNG para móviles)
 
 ### Estructura

@@ -10,6 +10,19 @@
       content="Web personal de Arkaitz Galisteo, desarrollador frontend Angular."
     />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script>
+      // Aplica el tema guardado antes de pintar, para que no parpadee. Misma lógica y clave
+      // que ThemeService.
+      (function () {
+        try {
+          var theme = localStorage.getItem('kaitzlab.theme');
+          var dark =
+            theme === 'dark' ||
+            (theme !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <app-root></app-root>
