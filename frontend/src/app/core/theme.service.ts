@@ -1,12 +1,4 @@
-import {
-  DOCUMENT,
-  Injectable,
-  PLATFORM_ID,
-  computed,
-  effect,
-  inject,
-  signal,
-} from '@angular/core';
+import { DOCUMENT, Injectable, PLATFORM_ID, computed, effect, inject, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 export const THEMES = ['system', 'light', 'dark'] as const;
