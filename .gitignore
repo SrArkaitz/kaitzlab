@@ -24,6 +24,7 @@ testem.log
 coverage/
 .nyc_output/
 junit.xml
+__screenshots__/
 
 # --- Logs ---
 logs/

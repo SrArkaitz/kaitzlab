@@ -25,7 +25,7 @@ lleva su CLI como dependencia (scripts de npm).
 
 ### Frontend
 - [x] Generar en `frontend/`: `npx @angular/cli@latest new kaitzlab-web --directory . --style=scss --ssr --routing --skip-git`
-- [ ] Limpiar la plantilla y crear estructura: `src/app/core`, `shared`, `features`, `layout`
+- [x] Limpiar la plantilla y crear estructura: `src/app/core`, `shared`, `features`, `layout`
 - [ ] Variables de diseño mínimas en `src/styles/_tokens.scss` (colores neutros, tipografía del sistema, espaciados) con claro/oscuro por `prefers-color-scheme`. La paleta con personalidad y el selector de tema (`ThemeService` como en gestion-hogar) llegan en la fase 1
 - [ ] Página "en construcción": nombre, una línea de presentación, enlaces a LinkedIn y GitHub
 - [ ] Configurar prerender de las rutas estáticas
