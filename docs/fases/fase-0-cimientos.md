@@ -8,16 +8,16 @@ con el repo, los dos proyectos generados y el despliegue automático funcionando
 ## Requisitos en el PC (comprobar antes de empezar)
 
 - [ ] Node LTS y Angular CLI (`npm i -g @angular/cli`)
-- [ ] .NET SDK LTS (`dotnet --version`)
+- [ ] Nest CLI (`npm i -g @nestjs/cli`)
 - [ ] Docker Desktop
 - [ ] Git configurado con la cuenta SrArkaitz
 
 ## Tareas
 
 ### Repo
-- [ ] `git init`, rama `main`, `.gitignore` combinado (Node, Angular, .NET, IDEs, `.env`)
+- [ ] `git init`, rama `main`, `.gitignore` combinado (Node, Angular, NestJS, IDEs, `.env`)
 - [ ] Crear el repo `SrArkaitz/kaitzlab` en GitHub (público) y subir el primer commit
-- [ ] `.editorconfig` común (2 espacios TS/HTML/SCSS, 4 espacios C#)
+- [ ] `.editorconfig` y Prettier comunes para front y back (2 espacios)
 
 ### Frontend
 - [ ] Generar en `frontend/`: `ng new kaitzlab-web --directory . --style=scss --ssr --routing`
@@ -28,10 +28,12 @@ con el repo, los dos proyectos generados y el despliegue automático funcionando
 - [ ] `Dockerfile` multi-stage (build con Node → servir el resultado de SSR con Node o el prerender con nginx; elegir y anotar en DECISIONES.md)
 
 ### Backend
-- [ ] Generar solución en `backend/`: `dotnet new sln -n Kaitzlab`, `dotnet new webapi -n Kaitzlab.Api`, `dotnet new xunit -n Kaitzlab.Api.Tests`
+- [ ] Generar en `backend/`: `nest new kaitzlab-api --directory . --package-manager npm --strict`
+- [ ] Revisar `SrArkaitz/gestion-hogar` y seguir su misma estructura y convenciones (módulos, config, scripts)
+- [ ] Prefijo global `/api` y `ConfigModule` con variables de entorno
 - [ ] Endpoint `GET /api/health` que devuelva `{ status: "ok", version }`
-- [ ] Test de integración del health con `WebApplicationFactory`
-- [ ] `Dockerfile` multi-stage (sdk → aspnet runtime), usuario no root
+- [ ] Test e2e del health con Jest + supertest
+- [ ] `Dockerfile` multi-stage (build con Node → imagen `node:*-alpine` solo con `dist` y dependencias de producción), usuario no root
 
 ### Docker y despliegue
 - [ ] `docker-compose.yml` en la raíz para desarrollo (web 8080, api 5080)
