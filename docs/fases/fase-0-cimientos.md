@@ -28,7 +28,7 @@ lleva su CLI como dependencia (scripts de npm).
 - [x] Limpiar la plantilla y crear estructura: `src/app/core`, `shared`, `features`, `layout`
 - [x] Variables de diseño mínimas en `src/styles/_tokens.scss` (colores neutros, tipografía del sistema, espaciados) con claro/oscuro por `prefers-color-scheme`. La paleta con personalidad y el selector de tema (`ThemeService` como en gestion-hogar) llegan en la fase 1
 - [x] Página "en construcción": nombre, una línea de presentación, enlaces a LinkedIn y GitHub
-- [ ] Configurar prerender de las rutas estáticas
+- [x] Configurar prerender de las rutas estáticas
 - [ ] `Dockerfile` multi-stage (build con Node → `nginx:alpine` sirviendo el resultado prerenderizado), con `nginx.conf` propio: fallback a `index.html`, `/api` reenviado al contenedor de la API, caché larga para assets con hash, gzip y cabeceras de seguridad básicas
 
 ### Backend
