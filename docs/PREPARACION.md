@@ -4,16 +4,16 @@ Marca cada punto con `[x]` cuando esté hecho. Claude: antes de la fase 0, revis
 y avisa de lo que falte para la tarea que vayas a hacer.
 
 ## 1. Herramientas en el PC
-- [ ] Git configurado con la cuenta SrArkaitz → `git --version`, `git config user.name`
-- [ ] Node LTS → `node -v`
-- [ ] Angular CLI → `npm i -g @angular/cli` · `ng version`
-- [ ] Nest CLI → `npm i -g @nestjs/cli` · `nest --version`
-- [ ] Docker Desktop arrancado → `docker version`
-- [ ] VS Code con la extensión de Claude Code (y Angular Language Service)
+- [x] Git configurado con la cuenta SrArkaitz → `git --version`, `git config user.name`
+- [x] Node LTS → `node -v`
+- [x] Angular CLI → `npm i -g @angular/cli` · `ng version`
+- [x] Nest CLI → `npm i -g @nestjs/cli` · `nest --version`
+- [x] Docker Desktop arrancado → `docker version`
+- [x] VS Code con la extensión de Claude Code (y Angular Language Service)
 - [ ] Repo clonado → `git clone https://github.com/SrArkaitz/kaitzlab`
 
 ## 2. GitHub
-- [ ] Repo `SrArkaitz/kaitzlab` creado (hecho)
+- [x] Repo `SrArkaitz/kaitzlab` creado (hecho)
 - [ ] Decidir si las imágenes de GHCR serán públicas o privadas
 - [ ] Si son privadas: token (classic) con `read:packages` para el servidor
 
@@ -36,4 +36,4 @@ y avisa de lo que falte para la tarea que vayas a hacer.
 ## 5. Decisiones
 - [ ] Front: prerender + nginx (recomendado hasta la fase 3) o SSR con Node
 - [ ] Despliegue en el servidor: manual (`pull && up -d`) o Watchtower
-- [ ] Idioma inicial: solo español (inglés en la fase 5)
+- [x] Idioma inicial: solo español (inglés en la fase 5)
