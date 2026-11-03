@@ -58,3 +58,6 @@ pnpm-debug.log*
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Se genera en cada build (frontend/scripts/generate-sitemap.mts)
+frontend/public/sitemap.xml

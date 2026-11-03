@@ -40,10 +40,11 @@ diseño propio, Lighthouse ≥ 90 en las cuatro categorías y el enlace puesto e
 - [x] Quitar la página "en construcción"
 
 ### SEO y calidad
-- [ ] Meta description y Open Graph por ruta (servicio con `Meta` y `Title`), imagen social por defecto
-- [ ] `robots.txt` y `sitemap.xml` generados en el build a partir de las rutas
-- [ ] Prerender de todas las rutas y comprobar que cada HTML trae su contenido
-- [ ] Tests de los componentes principales (Vitest) y de que cada ruta carga
+- [x] Meta description, Open Graph y URL canónica por ruta (`SeoService` con `Meta` y `Title`)
+- [ ] Imagen social por defecto para Open Graph (cuando esté la identidad visual)
+- [x] `robots.txt` y `sitemap.xml` generados en el build a partir de las rutas
+- [x] Prerender de todas las rutas y comprobar que cada HTML trae su contenido
+- [x] Tests de los componentes principales (Vitest) y de que cada ruta carga
 - [ ] Lighthouse ≥ 90 en las cuatro categorías (móvil) y revisión de accesibilidad con teclado
 - [ ] Opcional: Lighthouse CI en el workflow para que no empeore
 

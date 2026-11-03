@@ -69,6 +69,8 @@ jobs:
           curl -fsS http://localhost:8080/proyectos | grep -q '<title>Proyectos'
           test "$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/no-existe)" = 404
           curl -s http://localhost:8080/no-existe | grep -q 'Página no encontrada'
+          curl -fsS http://localhost:8080/sitemap.xml | grep -q 'https://kaitzlab.com/proyectos'
+          curl -fsS http://localhost:8080/robots.txt | grep -q 'Sitemap:'
           curl -fsSI http://localhost:8080/ | grep -qi '^x-content-type-options: nosniff'
           # Los archivos con hash se cachean un año y salen comprimidos
           asset=$(curl -fsS http://localhost:8080/ | grep -o 'main-[A-Z0-9]*\.js' | head -1)
