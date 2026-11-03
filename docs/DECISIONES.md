@@ -13,3 +13,5 @@ Formato: fecha · decisión · motivo.
 - 2026-11-03 · Dos contenedores (nginx con la web + API); nginx reenvía `/api` y solo se publica el puerto 8080 · la web sigue en pie aunque la API falle o se reinicie, y nginx sirve mejor los estáticos (caché, gzip, cabeceras).
 - 2026-11-03 · npm workspaces como en gestion-hogar, sin CLIs globales · un único `package-lock.json`, scripts en la raíz y los generadores con `npx`.
 - 2026-11-03 · Últimas versiones estables de Angular y NestJS, con Node 24 LTS · es un proyecto nuevo y de portfolio; el Angular CLI actual exige Node ≥ 22.22.3 o ≥ 24.15.
+- 2026-11-03 · Se copian las convenciones de gestion-hogar (ver `docs/CONVENCIONES.md`) salvo configuración con `@nestjs/config`, validación con `class-validator` y tests con Jest · son lo estándar en NestJS, encajan con un proyecto de portfolio y el CI los aprovecha.
+- 2026-11-03 · La identidad visual (paleta, tipografía, selector de tema) se deja para la fase 1 · en la fase 0 lo importante es tener algo publicado; tokens neutros mientras tanto.

@@ -21,12 +21,12 @@ lleva su CLI como dependencia (scripts de npm).
 - [x] `git init`, rama `main`, `.gitignore` combinado (Node, Angular, NestJS, IDEs, `.env`)
 - [x] Crear el repo `SrArkaitz/kaitzlab` en GitHub (público) y subir el primer commit
 - [x] `.editorconfig` y Prettier comunes para front y back (2 espacios)
-- [ ] Revisar `gestion-hogar` y apuntar en `docs/CONVENCIONES.md` lo que se copia (estructura, scripts, config, Dockerfile)
+- [x] Revisar `gestion-hogar` y apuntar en `docs/CONVENCIONES.md` lo que se copia (estructura, scripts, config, Dockerfile)
 
 ### Frontend
 - [ ] Generar en `frontend/`: `npx @angular/cli@latest new kaitzlab-web --directory . --style=scss --ssr --routing --skip-git`
 - [ ] Limpiar la plantilla y crear estructura: `src/app/core`, `shared`, `features`, `layout`
-- [ ] Variables de diseño en `src/styles/_tokens.scss` (colores, tipografía, espaciados) con modo claro/oscuro por `prefers-color-scheme`
+- [ ] Variables de diseño mínimas en `src/styles/_tokens.scss` (colores neutros, tipografía del sistema, espaciados) con claro/oscuro por `prefers-color-scheme`. La paleta con personalidad y el selector de tema (`ThemeService` como en gestion-hogar) llegan en la fase 1
 - [ ] Página "en construcción": nombre, una línea de presentación, enlaces a LinkedIn y GitHub
 - [ ] Configurar prerender de las rutas estáticas
 - [ ] `Dockerfile` multi-stage (build con Node → `nginx:alpine` sirviendo el resultado prerenderizado), con `nginx.conf` propio: fallback a `index.html`, `/api` reenviado al contenedor de la API, caché larga para assets con hash, gzip y cabeceras de seguridad básicas
