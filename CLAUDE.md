@@ -1,6 +1,6 @@
 # kaitzlab.com — instrucciones para Claude
 
-Lee este archivo entero antes de hacer nada. Después lee `docs/ROADMAP.md` y el archivo de la fase en curso en `docs/fases/`.
+Lee este archivo entero antes de hacer nada. Después lee `docs/ROADMAP.md`, `docs/PREPARACION.md` y el archivo de la fase en curso en `docs/fases/`.
 
 ## Qué es este proyecto
 
