@@ -44,10 +44,10 @@ lleva su CLI como dependencia (scripts de npm).
 ### Docker y despliegue
 - [ ] `docker-compose.yml` en la raíz, el mismo para local y servidor: servicios `web` (nginx, puerto 8080 del host) y `api` (sin puerto publicado; nginx le reenvía `/api`)
 - [x] Workflow `.github/workflows/ci.yml`: en PR y push a `main` → build y tests de front y back
-- [ ] `infra/DESPLIEGUE.md`: pasos para el servidor (clonar el repo, `.env`, `docker compose up -d --build`, actualizar con `git pull && docker compose up -d --build`) y cómo añadir `kaitzlab.com` y `www` al túnel de Cloudflare apuntando al servicio web
+- [x] `infra/DESPLIEGUE.md`: pasos para el servidor (clonar el repo, `.env`, `docker compose up -d --build`, actualizar con `git pull && docker compose up -d --build`) y cómo añadir `kaitzlab.com` y `www` al túnel de Cloudflare apuntando al servicio web
 
 ### Seguridad (en el servidor, lo hace Arkaitz; Claude solo deja la guía)
-- [ ] Guía en `infra/SEGURIDAD.md`: poner portainer y amule detrás de Cloudflare Access (o sacarlos del túnel y usar Tailscale)
+- [x] Guía en `infra/SEGURIDAD.md`: poner portainer y amule detrás de Cloudflare Access (o sacarlos del túnel y usar Tailscale)
 
 ## Cierre de fase
 - [ ] README actualizado con cómo arrancar en local
