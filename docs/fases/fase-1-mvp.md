@@ -14,3 +14,4 @@
 - Diseño propio y responsive; Lighthouse ≥ 90 en las cuatro categorías
 - Meta tags, Open Graph, `sitemap.xml`, `robots.txt`, favicon
 - CV descargable en PDF
+- (Opcional, cuando el CI sea estable) Watchtower en el servidor vigilando solo los contenedores de kaitzlab

@@ -34,6 +34,6 @@ y avisa de lo que falte para la tarea que vayas a hacer.
 - [ ] Email de contacto que quieres mostrar
 
 ## 5. Decisiones
-- [ ] Front: prerender + nginx (recomendado hasta la fase 3) o SSR con Node
-- [ ] Despliegue en el servidor: manual (`pull && up -d`) o Watchtower
+- [x] Front: prerender + nginx (SSR con Node se valora en la fase 3)
+- [x] Despliegue en el servidor: manual (`pull && up -d`); Watchtower más adelante
 - [x] Idioma inicial: solo español (inglés en la fase 5)

@@ -25,7 +25,7 @@ con el repo, los dos proyectos generados y el despliegue automático funcionando
 - [ ] Variables de diseño en `src/styles/_tokens.scss` (colores, tipografía, espaciados) con modo claro/oscuro por `prefers-color-scheme`
 - [ ] Página "en construcción": nombre, una línea de presentación, enlaces a LinkedIn y GitHub
 - [ ] Configurar prerender de las rutas estáticas
-- [ ] `Dockerfile` multi-stage (build con Node → servir el resultado de SSR con Node o el prerender con nginx; elegir y anotar en DECISIONES.md)
+- [ ] `Dockerfile` multi-stage (build con Node → `nginx:alpine` sirviendo el resultado prerenderizado), con `nginx.conf` propio: fallback a `index.html`, caché larga para assets con hash, gzip y cabeceras de seguridad básicas
 
 ### Backend
 - [ ] Generar en `backend/`: `nest new kaitzlab-api --directory . --package-manager npm --strict`
