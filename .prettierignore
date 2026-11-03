@@ -1,0 +1,8 @@
+node_modules/
+dist/
+coverage/
+.angular/
+package-lock.json
+# La documentación y los posts se escriben a mano: Prettier alinearía las tablas
+# y cada cambio tocaría todas las filas. Para ellos basta con .editorconfig
+*.md

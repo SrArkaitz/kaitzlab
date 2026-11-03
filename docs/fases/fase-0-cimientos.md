@@ -20,7 +20,7 @@ lleva su CLI como dependencia (scripts de npm).
 ### Repo
 - [x] `git init`, rama `main`, `.gitignore` combinado (Node, Angular, NestJS, IDEs, `.env`)
 - [x] Crear el repo `SrArkaitz/kaitzlab` en GitHub (público) y subir el primer commit
-- [ ] `.editorconfig` y Prettier comunes para front y back (2 espacios)
+- [x] `.editorconfig` y Prettier comunes para front y back (2 espacios)
 - [ ] Revisar `gestion-hogar` y apuntar en `docs/CONVENCIONES.md` lo que se copia (estructura, scripts, config, Dockerfile)
 
 ### Frontend
