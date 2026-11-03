@@ -1,0 +1,10 @@
+<label class="theme-select">
+  <span class="label">Tema</span>
+  <select (change)="onChange($any($event.target).value)">
+    @for (theme of themes; track theme) {
+      <option [value]="theme" [selected]="theme === themeService.theme()">
+        {{ labels[theme] }}
+      </option>
+    }
+  </select>
+</label>

@@ -26,7 +26,7 @@ diseño propio, Lighthouse ≥ 90 en las cuatro categorías y el enlace puesto e
 - [ ] Favicon e icono propios (SVG + PNG para móviles)
 
 ### Estructura
-- [ ] `layout/`: cabecera con navegación (y selector de tema), pie con enlaces, enlace "saltar al contenido"
+- [x] `layout/`: cabecera con navegación (y selector de tema), pie con enlaces, enlace "saltar al contenido"
 - [ ] Rutas lazy por página en `features/` con `title` en cada una; página 404 propia
 - [x] Contenido en archivos de datos tipados en `src/app/core/data/` (experiencia, proyectos, stack, enlaces), no en el HTML
 

@@ -1,0 +1,40 @@
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-6);
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-6);
+}
+
+.brand {
+  margin-right: auto;
+  color: var(--color-text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+
+  &:hover,
+  &.active {
+    color: var(--color-text);
+  }
+
+  &.active {
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+  }
+}

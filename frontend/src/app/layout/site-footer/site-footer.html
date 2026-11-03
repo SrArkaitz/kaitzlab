@@ -1,0 +1,14 @@
+<footer class="site-footer">
+  <p>© {{ year }} {{ name }}</p>
+  <ul aria-label="Perfiles">
+    @for (link of links; track link.url) {
+      <li>
+        <a [href]="link.url" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+      </li>
+    }
+  </ul>
+  <p>
+    Hecha con Angular y NestJS en mi servidor casero ·
+    <a [href]="repoUrl" target="_blank" rel="noopener noreferrer">código</a>
+  </p>
+</footer>
