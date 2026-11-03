@@ -8,4 +8,8 @@ Formato: fecha · decisión · motivo.
 - 2026-11-03 · Hosting en el servidor casero vía Cloudflare Tunnel · ya montado; es parte de lo que se cuenta en el blog.
 - 2026-11-03 · Web solo en español al principio · el inglés se plantea en la fase 5.
 - 2026-11-03 · Frontend prerenderizado y servido con nginx (sin SSR con Node) · más rápido y ligero para el servidor; el contenido cambia solo al desplegar. Se revisa en la fase 3.
-- 2026-11-03 · Despliegue manual en el servidor (`docker compose pull && up -d`) · entender el flujo primero; Watchtower más adelante cuando el CI sea estable.
+- 2026-11-03 · ~~Despliegue manual en el servidor (`docker compose pull && up -d`) · entender el flujo primero; Watchtower más adelante cuando el CI sea estable.~~ Sustituida por la siguiente.
+- 2026-11-03 · Despliegue como en gestion-hogar: el servidor construye las imágenes con `git pull && docker compose up -d --build`, a mano y sin GHCR · un solo flujo para los dos proyectos, sin registro ni tokens. GitHub Actions se queda para build y tests. Las imágenes en un registro se pueden recuperar en la fase 5.
+- 2026-11-03 · Dos contenedores (nginx con la web + API); nginx reenvía `/api` y solo se publica el puerto 8080 · la web sigue en pie aunque la API falle o se reinicie, y nginx sirve mejor los estáticos (caché, gzip, cabeceras).
+- 2026-11-03 · npm workspaces como en gestion-hogar, sin CLIs globales · un único `package-lock.json`, scripts en la raíz y los generadores con `npx`.
+- 2026-11-03 · Últimas versiones estables de Angular y NestJS, con Node 24 LTS · es un proyecto nuevo y de portfolio; el Angular CLI actual exige Node ≥ 22.22.3 o ≥ 24.15.

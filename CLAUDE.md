@@ -19,8 +19,10 @@ para demostrar Angular + NestJS (todo en TypeScript).
 | Base de datos | PostgreSQL + el mismo ORM que use `gestion-hogar` (a partir de la fase 3) |
 | Contenido blog | Markdown con frontmatter en `content/blog/` (fases 1–2); BD a partir de la fase 3 |
 | Contenedores | Docker + Docker Compose |
-| CI/CD | GitHub Actions → imágenes en GHCR (`ghcr.io/srarkaitz/kaitzlab-*`) |
-| Hosting | Servidor casero (Ubuntu Server, Docker) publicado con Cloudflare Tunnel |
+| Monorepo | npm workspaces (`frontend`, `backend`) con un único `package-lock.json`, como `gestion-hogar` |
+| CI | GitHub Actions: build y tests de front y back (sin registro de imágenes) |
+| Hosting | Servidor casero (Ubuntu Server, Docker) publicado con Cloudflare Tunnel. Dos contenedores: `web` (nginx, reenvía `/api`) y `api` |
+| Despliegue | A mano, como `gestion-hogar`: `git pull && docker compose up -d --build` en el servidor |
 
 ## Estructura del repo
 
@@ -35,8 +37,9 @@ kaitzlab/
 ├── frontend/            ← app Angular (se genera en la fase 0)
 ├── backend/             ← API NestJS (se genera en la fase 0)
 ├── content/blog/        ← posts en Markdown
-├── infra/               ← docker-compose de producción, notas del servidor
-└── .github/workflows/   ← CI/CD
+├── infra/               ← guías del servidor (despliegue, seguridad)
+├── docker-compose.yml   ← el mismo para local y servidor
+└── .github/workflows/   ← CI
 ```
 
 ## Cómo trabajar
@@ -44,7 +47,8 @@ kaitzlab/
 1. **Una tarea cada vez.** Coge la primera tarea sin marcar (`- [ ]`) de la fase en curso.
    Antes de empezar, resume en 2–3 líneas lo que vas a hacer.
 2. **Usa los generadores oficiales** (`ng new`, `ng generate`, `nest new`, `nest generate`)
-   en vez de escribir a mano archivos de configuración que ellos crean.
+   en vez de escribir a mano archivos de configuración que ellos crean. No hay CLIs globales:
+   `npx @angular/cli@latest new …` para crear y después `npx ng …` / `npx nest …` dentro de cada proyecto.
 3. **Comprueba que funciona** antes de dar una tarea por terminada: compila
    (`ng build`, `npm run build` en el backend), pasa los tests y, si aplica, levanta con `docker compose up`.
 4. **Marca la tarea como hecha** (`- [x]`) en el archivo de la fase y haz un commit
@@ -70,6 +74,7 @@ kaitzlab/
 
 - Ubuntu Server con Docker; datos persistentes en `/mnt/almacen-rocket/`.
 - `cloudflared` corre en un contenedor y publica subdominios de kaitzlab.com.
-- Puertos YA ocupados en el servidor: 8096, 2283, 9443. Esta web usará
-  **8080** (frontend) y **5080** (API) en el host; PostgreSQL sin puerto expuesto.
-- El despliegue lo hace Arkaitz o el workflow; Claude nunca hace SSH al servidor.
+- Puertos YA ocupados en el servidor: 8096, 2283, 9443. Esta web publica solo el
+  **8080** en el host (nginx, que reenvía `/api` a la API). La API y PostgreSQL sin puerto
+  expuesto; el 5080 queda reservado por si hiciera falta publicar la API.
+- El despliegue lo hace Arkaitz a mano; Claude nunca hace SSH al servidor.
