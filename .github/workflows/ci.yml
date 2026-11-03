@@ -75,7 +75,14 @@ jobs:
 
       - name: Logs de los contenedores
         if: failure()
-        run: docker compose logs
+        run: |
+          docker compose ps -a
+          docker compose logs
+          # Además como anotaciones, que se ven en el resumen de la ejecución sin abrir los logs
+          for s in web api; do
+            out=$(docker compose logs --no-color --tail 30 "$s" 2>&1 | sed -e 's/%/%25/g' | sed -e ':a;N;$!ba;s/\n/%0A/g')
+            echo "::error title=Logs de $s::$out"
+          done
 
       - name: Parar
         if: always()
