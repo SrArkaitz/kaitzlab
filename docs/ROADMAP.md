@@ -19,4 +19,10 @@ las siguientes se refinan al llegar a ellas.
 
 ## Fase en curso
 
-**Fase 0 — Cimientos** → `docs/fases/fase-0-cimientos.md`
+**Fase 1 — MVP público** → `docs/fases/fase-1-mvp.md`
+
+## Estado
+
+- **Fase 0 — Cimientos:** terminada en el repo (2026-11-03). Front y back generados, Docker probado en el CI.
+  Falta el primer despliegue en el servidor, que hace Arkaitz siguiendo `infra/DESPLIEGUE.md`
+  (y aplicar `infra/SEGURIDAD.md` antes de publicar).

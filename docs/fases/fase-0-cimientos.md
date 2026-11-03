@@ -28,20 +28,20 @@ lleva su CLI como dependencia, y las imágenes Docker se prueban en el CI y se c
 - [x] Variables de diseño mínimas en `src/styles/_tokens.scss` (colores neutros, tipografía del sistema, espaciados) con claro/oscuro por `prefers-color-scheme`. La paleta con personalidad y el selector de tema (`ThemeService` como en gestion-hogar) llegan en la fase 1
 - [x] Página "en construcción": nombre, una línea de presentación, enlaces a LinkedIn y GitHub
 - [x] Configurar prerender de las rutas estáticas
-- [ ] `Dockerfile` multi-stage (build con Node → `nginx:alpine` sirviendo el resultado prerenderizado), con `nginx.conf` propio: fallback a `index.html`, `/api` reenviado al contenedor de la API, caché larga para assets con hash, gzip y cabeceras de seguridad básicas
+- [x] `Dockerfile` multi-stage (build con Node → `nginx:alpine` sirviendo el resultado prerenderizado), con `nginx.conf` propio: fallback a `index.html`, `/api` reenviado al contenedor de la API, caché larga para assets con hash, gzip y cabeceras de seguridad básicas
 
 ### Backend
 - [x] Generar en `backend/`: `npx @nestjs/cli@latest new kaitzlab-api --directory . --package-manager npm --strict --skip-git`
 - [x] Prefijo global `/api` y `ConfigModule` con variables de entorno
 - [x] Endpoint `GET /api/health` que devuelva `{ status: "ok", version }`
 - [x] Test e2e del health con Vitest + supertest
-- [ ] `Dockerfile` multi-stage (build con Node → imagen `node:*-alpine` solo con `dist` y dependencias de producción), usuario no root
+- [x] `Dockerfile` multi-stage (build con Node → imagen `node:*-alpine` solo con `dist` y dependencias de producción), usuario no root
 
 ### Monorepo
 - [x] npm workspaces como en gestion-hogar: `package.json` en la raíz, un único `package-lock.json` y scripts `dev:web`, `dev:api`, `build` y `test`
 
 ### Docker y despliegue
-- [ ] `docker-compose.yml` en la raíz, el mismo para local y servidor: servicios `web` (nginx, puerto 8080 del host) y `api` (sin puerto publicado; nginx le reenvía `/api`)
+- [x] `docker-compose.yml` en la raíz, el mismo para local y servidor: servicios `web` (nginx, puerto 8080 del host) y `api` (sin puerto publicado; nginx le reenvía `/api`)
 - [x] Workflow `.github/workflows/ci.yml`: en PR y push a `main` → build y tests de front y back
 - [x] `infra/DESPLIEGUE.md`: pasos para el servidor (clonar el repo, `.env`, `docker compose up -d --build`, actualizar con `git pull && docker compose up -d --build`) y cómo añadir `kaitzlab.com` y `www` al túnel de Cloudflare apuntando al servicio web
 
@@ -49,5 +49,5 @@ lleva su CLI como dependencia, y las imágenes Docker se prueban en el CI y se c
 - [x] Guía en `infra/SEGURIDAD.md`: poner portainer y amule detrás de Cloudflare Access (o sacarlos del túnel y usar Tailscale)
 
 ## Cierre de fase
-- [ ] README actualizado con cómo arrancar en local
-- [ ] Marcar fase 0 como terminada en ROADMAP.md y crear `fase-1-mvp.md` desglosada
+- [x] README actualizado con cómo arrancar en local
+- [x] Marcar fase 0 como terminada en ROADMAP.md y crear `fase-1-mvp.md` desglosada
