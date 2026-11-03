@@ -8,12 +8,11 @@ en el servidor (igual que en gestion-hogar) para tener la web actualizada en kai
 
 ## Requisitos en el PC (comprobar antes de empezar)
 
-- [ ] Node 24 LTS (la última versión del Angular CLI pide Node ≥ 22.22.3 o ≥ 24.15)
-- [ ] Docker Desktop (hace falta a partir de los `Dockerfile`)
+- [x] Node 24 LTS con fnm (la última versión del Angular CLI pide Node ≥ 22.22.3 o ≥ 24.15)
 - [x] Git configurado con la cuenta SrArkaitz
 
-No hacen falta CLIs globales: los generadores se lanzan con `npx` y después cada proyecto
-lleva su CLI como dependencia (scripts de npm).
+No hacen falta CLIs globales ni Docker en el PC: los generadores se lanzan con `npx`, cada proyecto
+lleva su CLI como dependencia, y las imágenes Docker se prueban en el CI y se construyen en el servidor.
 
 ## Tareas
 

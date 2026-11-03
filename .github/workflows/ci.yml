@@ -43,3 +43,40 @@ jobs:
 
       - name: Tests (unitarios y e2e)
         run: npm test
+
+  # Construye y levanta las imágenes igual que en el servidor, y comprueba que la web
+  # y la API responden a través de nginx. Así no hace falta Docker en el PC.
+  docker:
+    name: Imágenes Docker
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Construir imágenes
+        run: docker compose build
+
+      - name: Levantar y esperar a que estén sanas
+        run: docker compose up -d --wait --wait-timeout 90
+
+      - name: Comprobar web y API a través de nginx
+        run: |
+          set -eux
+          curl -fsS http://localhost:8080/ | grep -q 'Arkaitz Galisteo</h1>'
+          curl -fsS http://localhost:8080/api/health | grep -q '"status":"ok"'
+          curl -fsSI http://localhost:8080/ | grep -qi '^x-content-type-options: nosniff'
+          # Los archivos con hash se cachean un año y salen comprimidos
+          asset=$(curl -fsS http://localhost:8080/ | grep -o 'main-[A-Z0-9]*\.js' | head -1)
+          curl -fsSI "http://localhost:8080/$asset" | grep -qi '^cache-control: max-age=31536000'
+          curl -fsSI -H 'Accept-Encoding: gzip' "http://localhost:8080/$asset" | grep -qi '^content-encoding: gzip'
+          # La API no está publicada en el host
+          ! curl -fsS --max-time 3 http://localhost:3000/api/health
+
+      - name: Logs de los contenedores
+        if: failure()
+        run: docker compose logs
+
+      - name: Parar
+        if: always()
+        run: docker compose down

@@ -17,3 +17,4 @@ Formato: fecha · decisión · motivo.
 - 2026-11-03 · La identidad visual (paleta, tipografía, selector de tema) se deja para la fase 1 · en la fase 0 lo importante es tener algo publicado; tokens neutros mientras tanto.
 - 2026-11-03 · Tests con Vitest en lugar de Jest, en front y back · es lo que generan Angular 22 y NestJS 12 de serie; un solo runner para todo el repo.
 - 2026-11-03 · Se quitan del backend generado `AGENTS.md` (publicidad de NestJS Observe) y `@nestjs/mau` (despliegue en la nube de NestJS) · no se usan: el despliegue es en el servidor casero.
+- 2026-11-03 · Sin Docker en el PC: las imágenes se prueban en el CI (job que construye, levanta y comprueba con `curl`) y se construyen en el servidor · como en gestion-hogar; para desarrollar basta con `npm run dev:web` y `npm run dev:api`.

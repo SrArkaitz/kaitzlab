@@ -1,0 +1,32 @@
+# El mismo para el servidor y para el CI. Despliegue: ver infra/DESPLIEGUE.md
+#   git pull && docker compose up -d --build
+name: kaitzlab
+
+services:
+  # nginx con la web prerenderizada; reenvía /api a la API. Es lo único que se publica.
+  web:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    image: kaitzlab-web:latest
+    container_name: kaitzlab-web
+    restart: unless-stopped
+    ports:
+      - '8080:80'
+    environment:
+      - TZ=Europe/Madrid
+
+  # API NestJS, sin puerto publicado: solo se llega a ella a través de nginx.
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    image: kaitzlab-api:latest
+    container_name: kaitzlab-api
+    restart: unless-stopped
+    # Variables futuras (BD, login…) con ${VAR} y un archivo .env junto a este (no se sube al repo).
+    # El puerto es fijo: nginx reenvía /api a api:3000.
+    environment:
+      - TZ=Europe/Madrid
+      - NODE_ENV=production
+      - PORT=3000

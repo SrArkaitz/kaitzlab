@@ -1,0 +1,12 @@
+# El contexto de las imágenes es la raíz del repo (workspaces con un único package-lock.json)
+**/node_modules
+**/dist
+**/.angular
+**/coverage
+**/.env
+.git
+.github
+.vscode
+.claude
+docs
+infra
