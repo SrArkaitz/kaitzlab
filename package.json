@@ -1,0 +1,27 @@
+{
+  "name": "kaitzlab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Web personal de Arkaitz Galisteo: Angular + NestJS",
+  "author": "Arkaitz Galisteo",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev:web": "npm start -w frontend",
+    "dev:api": "npm run start:dev -w backend",
+    "build": "npm run build -w backend && npm run build -w frontend",
+    "test": "npm test -w backend && npm run test:e2e -w backend && npm test -w frontend -- --watch=false",
+    "lint": "npm run lint -w backend",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "npm@11.19.1"
+}

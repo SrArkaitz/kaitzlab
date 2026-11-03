@@ -39,7 +39,7 @@ lleva su CLI como dependencia (scripts de npm).
 - [ ] `Dockerfile` multi-stage (build con Node → imagen `node:*-alpine` solo con `dist` y dependencias de producción), usuario no root
 
 ### Monorepo
-- [ ] npm workspaces como en gestion-hogar: `package.json` en la raíz, un único `package-lock.json` y scripts `dev:web`, `dev:api`, `build` y `test`
+- [x] npm workspaces como en gestion-hogar: `package.json` en la raíz, un único `package-lock.json` y scripts `dev:web`, `dev:api`, `build` y `test`
 
 ### Docker y despliegue
 - [ ] `docker-compose.yml` en la raíz, el mismo para local y servidor: servicios `web` (nginx, puerto 8080 del host) y `api` (sin puerto publicado; nginx le reenvía `/api`)
