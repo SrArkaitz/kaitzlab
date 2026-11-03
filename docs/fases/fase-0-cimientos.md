@@ -33,7 +33,7 @@ lleva su CLI como dependencia (scripts de npm).
 
 ### Backend
 - [x] Generar en `backend/`: `npx @nestjs/cli@latest new kaitzlab-api --directory . --package-manager npm --strict --skip-git`
-- [ ] Prefijo global `/api` y `ConfigModule` con variables de entorno
+- [x] Prefijo global `/api` y `ConfigModule` con variables de entorno
 - [ ] Endpoint `GET /api/health` que devuelva `{ status: "ok", version }`
 - [ ] Test e2e del health con Vitest + supertest
 - [ ] `Dockerfile` multi-stage (build con Node → imagen `node:*-alpine` solo con `dist` y dependencias de producción), usuario no root
