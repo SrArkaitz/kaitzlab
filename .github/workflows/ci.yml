@@ -1,0 +1,45 @@
+# Integración continua: en cada PR y en cada push a main se comprueba que el front y el back
+# compilan y pasan los tests. El despliegue es a mano en el servidor (ver infra/DESPLIEGUE.md).
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# Si llega un push nuevo a la misma rama, se cancela la ejecución anterior
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: Build y tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Formato (Prettier)
+        run: npm run format:check
+
+      - name: Lint (backend)
+        run: npm run lint
+
+      - name: Build (backend y frontend)
+        run: npm run build
+
+      - name: Tests (unitarios y e2e)
+        run: npm test
