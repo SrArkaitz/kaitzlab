@@ -32,10 +32,10 @@ lleva su CLI como dependencia (scripts de npm).
 - [ ] `Dockerfile` multi-stage (build con Node → `nginx:alpine` sirviendo el resultado prerenderizado), con `nginx.conf` propio: fallback a `index.html`, `/api` reenviado al contenedor de la API, caché larga para assets con hash, gzip y cabeceras de seguridad básicas
 
 ### Backend
-- [ ] Generar en `backend/`: `npx @nestjs/cli@latest new kaitzlab-api --directory . --package-manager npm --strict --skip-git`
+- [x] Generar en `backend/`: `npx @nestjs/cli@latest new kaitzlab-api --directory . --package-manager npm --strict --skip-git`
 - [ ] Prefijo global `/api` y `ConfigModule` con variables de entorno
 - [ ] Endpoint `GET /api/health` que devuelva `{ status: "ok", version }`
-- [ ] Test e2e del health con Jest + supertest
+- [ ] Test e2e del health con Vitest + supertest
 - [ ] `Dockerfile` multi-stage (build con Node → imagen `node:*-alpine` solo con `dist` y dependencias de producción), usuario no root
 
 ### Monorepo

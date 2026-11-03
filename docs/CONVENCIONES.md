@@ -73,4 +73,4 @@ Revisado el 2026-11-03 sobre la versión 0.2.0 (Angular 20, NestJS 11, Prisma 7)
 | Commits | Frase libre en español | Conventional Commits en español | Lo pide CLAUDE.md |
 | Configuración | `dotenv` + `process.env` | `@nestjs/config` (`ConfigModule`) | Estándar en Nest; habrá más variables (BD, login, métricas) |
 | Validación | Funciones propias en `common/validation.ts`, `@Body() body: unknown` | DTOs con `class-validator` + `ValidationPipe` | Lo estándar en NestJS y documenta la API |
-| Tests | No tiene | Jest: e2e en el back y unitarios donde aporten; se pasan en el CI | Portfolio y red de seguridad del CI |
+| Tests | No tiene | Vitest (lo que traen Angular 22 y NestJS 12): e2e en el back y unitarios donde aporten; se pasan en el CI | Portfolio y red de seguridad del CI |
