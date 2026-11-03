@@ -1,0 +1,17 @@
+<main class="coming-soon">
+  <p class="eyebrow">kaitzlab.com · en construcción</p>
+  <h1>Arkaitz Galisteo</h1>
+  <p class="lead">
+    Desarrollador frontend especializado en Angular. Aquí irán pronto mi CV, mis proyectos, un blog
+    y un laboratorio con datos en vivo de mi servidor casero.
+  </p>
+  <nav aria-label="Perfiles">
+    <ul class="links">
+      @for (link of links; track link.url) {
+        <li>
+          <a [href]="link.url" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+        </li>
+      }
+    </ul>
+  </nav>
+</main>
