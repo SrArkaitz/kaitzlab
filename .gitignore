@@ -1,0 +1,59 @@
+# --- Dependencias ---
+node_modules/
+.pnp
+.pnp.js
+.yarn/
+
+# --- Builds ---
+dist/
+build/
+out-tsc/
+tmp/
+*.tsbuildinfo
+
+# --- Angular ---
+.angular/
+.nx/
+.sass-cache/
+/connect.lock
+/libpeerconnection.log
+testem.log
+/typings
+
+# --- Tests y cobertura ---
+coverage/
+.nyc_output/
+junit.xml
+
+# --- Logs ---
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Variables de entorno (nunca secretos en el repo) ---
+.env
+.env.*
+!.env.example
+
+# --- IDEs y editores ---
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+.idea/
+*.sublime-workspace
+*.swp
+*~
+
+# --- Claude Code (ajustes locales) ---
+.claude/settings.local.json
+
+# --- Sistema operativo ---
+.DS_Store
+Thumbs.db
+desktop.ini
