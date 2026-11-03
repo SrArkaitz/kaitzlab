@@ -1,0 +1,14 @@
+<article class="card">
+  <h3>{{ project().name }}</h3>
+  <p>{{ project().summary }}</p>
+  <ul class="tags" aria-label="Tecnologías">
+    @for (tech of project().technologies; track tech) {
+      <li>{{ tech }}</li>
+    }
+  </ul>
+  @if (project().repoUrl; as repoUrl) {
+    <a [href]="repoUrl" target="_blank" rel="noopener noreferrer"
+      >Ver código<span class="visually-hidden"> de {{ project().name }}</span></a
+    >
+  }
+</article>

@@ -1,0 +1,31 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  max-width: var(--content-width);
+  margin: var(--space-8) 0 0;
+  padding: 0 0 0 var(--space-6);
+  border-left: 2px solid var(--color-border);
+  list-style: none;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  h2,
+  p {
+    margin: 0;
+  }
+
+  h2 {
+    font-size: var(--text-lg);
+  }
+}
+
+.period {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}

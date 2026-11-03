@@ -1,0 +1,42 @@
+<section class="hero" aria-labelledby="hero-title">
+  <p class="eyebrow">{{ profile.role }}</p>
+  <h1 id="hero-title">{{ profile.name }}</h1>
+  <p class="lead">{{ profile.shortBio }}</p>
+  <p class="actions">
+    <a class="button" routerLink="/proyectos">Ver proyectos</a>
+    <a class="button secondary" routerLink="/contacto">Contacto</a>
+  </p>
+</section>
+
+<section aria-labelledby="stack-title">
+  <h2 id="stack-title">Stack</h2>
+  <dl class="stack">
+    @for (group of stack; track group.title) {
+      <div>
+        <dt>{{ group.title }}</dt>
+        <dd>
+          <ul class="tags">
+            @for (item of group.items; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </dd>
+      </div>
+    }
+  </dl>
+</section>
+
+<section aria-labelledby="projects-title">
+  <h2 id="projects-title">Proyectos destacados</h2>
+  <ul class="grid">
+    @for (project of featured; track project.slug) {
+      <li><app-project-card [project]="project" /></li>
+    }
+  </ul>
+  <p><a routerLink="/proyectos">Todos los proyectos</a></p>
+</section>
+
+<section aria-labelledby="blog-title">
+  <h2 id="blog-title">Blog</h2>
+  <p class="muted">Pronto: una serie sobre cómo monté mi servidor en casa.</p>
+</section>

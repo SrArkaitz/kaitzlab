@@ -27,17 +27,17 @@ diseño propio, Lighthouse ≥ 90 en las cuatro categorías y el enlace puesto e
 
 ### Estructura
 - [x] `layout/`: cabecera con navegación (y selector de tema), pie con enlaces, enlace "saltar al contenido"
-- [ ] Rutas lazy por página en `features/` con `title` en cada una; página 404 propia
+- [x] Rutas lazy por página en `features/` con `title` en cada una; página 404 propia
 - [x] Contenido en archivos de datos tipados en `src/app/core/data/` (experiencia, proyectos, stack, enlaces), no en el HTML
 
 ### Páginas
-- [ ] Portada: presentación, stack, proyectos destacados y hueco para últimos posts (fase 2)
-- [ ] Sobre mí
-- [ ] Experiencia: línea de tiempo a partir de los datos
-- [ ] Proyectos: tarjetas con descripción, tecnologías, enlace al repo y captura
-- [ ] Contacto: email, LinkedIn y GitHub (sin formulario todavía)
+- [x] Portada: presentación, stack, proyectos destacados y hueco para últimos posts (fase 2)
+- [x] Sobre mí
+- [x] Experiencia: línea de tiempo a partir de los datos
+- [x] Proyectos: tarjetas con descripción, tecnologías, enlace al repo y captura
+- [x] Contacto: email, LinkedIn y GitHub (sin formulario todavía)
 - [ ] CV descargable en PDF desde la cabecera o la página de experiencia
-- [ ] Quitar la página "en construcción"
+- [x] Quitar la página "en construcción"
 
 ### SEO y calidad
 - [ ] Meta description y Open Graph por ruta (servicio con `Meta` y `Title`), imagen social por defecto

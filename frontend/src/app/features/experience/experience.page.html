@@ -1,0 +1,22 @@
+<h1>Experiencia</h1>
+@if (cvUrl) {
+  <p><a class="button" [href]="cvUrl" download>Descargar CV (PDF)</a></p>
+}
+<ol class="timeline">
+  @for (job of experience; track job.company) {
+    <li>
+      <article>
+        <p class="period">{{ job.period }}</p>
+        <h2>{{ job.role }} · {{ job.company }}</h2>
+        <p>{{ job.summary }}</p>
+        @if (job.technologies.length) {
+          <ul class="tags" aria-label="Tecnologías">
+            @for (tech of job.technologies; track tech) {
+              <li>{{ tech }}</li>
+            }
+          </ul>
+        }
+      </article>
+    </li>
+  }
+</ol>
