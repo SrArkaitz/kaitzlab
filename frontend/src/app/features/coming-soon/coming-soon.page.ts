@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-
-interface ProfileLink {
-  label: string;
-  url: string;
-}
+import { PROFILE } from '../../core/data/profile';
 
 /** Portada provisional mientras se construye la web (fase 0). */
 @Component({
@@ -12,8 +8,5 @@ interface ProfileLink {
   templateUrl: './coming-soon.page.html',
 })
 export class ComingSoonPage {
-  protected readonly links: ProfileLink[] = [
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/arkaitz-galisteo-145383160/' },
-    { label: 'GitHub', url: 'https://github.com/SrArkaitz' },
-  ];
+  protected readonly links = PROFILE.links;
 }

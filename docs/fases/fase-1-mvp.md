@@ -28,7 +28,7 @@ diseño propio, Lighthouse ≥ 90 en las cuatro categorías y el enlace puesto e
 ### Estructura
 - [ ] `layout/`: cabecera con navegación (y selector de tema), pie con enlaces, enlace "saltar al contenido"
 - [ ] Rutas lazy por página en `features/` con `title` en cada una; página 404 propia
-- [ ] Contenido en archivos de datos tipados en `src/app/core/data/` (experiencia, proyectos, stack, enlaces), no en el HTML
+- [x] Contenido en archivos de datos tipados en `src/app/core/data/` (experiencia, proyectos, stack, enlaces), no en el HTML
 
 ### Páginas
 - [ ] Portada: presentación, stack, proyectos destacados y hueco para últimos posts (fase 2)
